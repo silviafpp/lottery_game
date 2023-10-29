@@ -1,30 +1,61 @@
 #include <iostream>
-#include <cstdlib>
-#include <time.h>
+#include <vector>
+#include <algorithm>
+#include <random>
+
 using namespace std;
 
 int main() {
-    int maxKey = 50;
-    srand(time(0));
+    char keyPress;
 
-    cout << "Chave: ";
+    do {
+        vector<int> key;
+        vector<int> star;
 
-    for(int i = 0; i<5; i++) { 
-        cout << rand()%maxKey;
-            if (i < 4) {
-                cout << " ";    
-      }
-   }
+        for (int i = 1; i <= 50; i++) {
+            key.push_back(i);
+        }
 
-    int maxStar = 12;
+        random_device rd;
+        mt19937 rng(rd());
 
-    cout << "  Estrela: ";
+        shuffle(key.begin(), key.end(), rng);
 
-    for(int i = 0; i<2; i++) { 
-        cout << rand()%maxStar;
-            if (i < 1) {
-                cout << " ";
-      }
-   }
+        // Sort the key numbers
+        sort(key.begin(), key.end());
+
+        cout << "Chave: ";
+
+        for (int i = 0; i < 5; i++) {
+            cout << key[i] << " ";
+        }
+
+        for (int i = 1; i <= 12; i++) {
+            star.push_back(i);
+        }
+
+        shuffle(star.begin(), star.end(), rng);
+
+        // Sort the star numbers
+        sort(star.begin(), star.end());
+
+        cout << "Estrela: ";
+
+        for (int i = 0; i < 2; i++) {
+            cout << star[i] << " ";
+        }
+
+        cout << "\nDeseja gerar outra chave? [y/N] ";
+        cin >> keyPress;
+
+        if(keyPress == 'y') {
+            system("clear");
+        } else if (keyPress == 'N') {
+            cout << "Exiting the game." << endl;
+            break;
+        }
+
+    } while (true);
+
     return 0;
 }

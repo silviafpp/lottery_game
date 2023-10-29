@@ -1,1 +1,1 @@
-             // cout << " ";    
+    iota(key.begin(), key.end(), 1);
