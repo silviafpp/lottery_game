@@ -21,9 +21,6 @@ int main() {
 
         shuffle(key.begin(), key.end(), rng);
 
-        // Sort the key numbers
-        sort(key.begin(), key.end());
-
         cout << "Chave: ";
 
         for (int i = 0; i < 5; i++) {
@@ -35,9 +32,6 @@ int main() {
         }
 
         shuffle(star.begin(), star.end(), rng);
-
-        // Sort the star numbers
-        sort(star.begin(), star.end());
 
         cout << "Estrela: ";
 
