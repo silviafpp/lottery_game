@@ -20,6 +20,7 @@ int main() {
         mt19937 rng(rd());
 
         shuffle(key.begin(), key.end(), rng);
+        sort(key.begin(), key.begin() + 5);  
 
         cout << "Chave: ";
 
@@ -32,6 +33,7 @@ int main() {
         }
 
         shuffle(star.begin(), star.end(), rng);
+        sort(star.begin(), star.begin() + 2);  
 
         cout << "Estrela: ";
 
@@ -42,10 +44,10 @@ int main() {
         cout << "\nDeseja gerar outra chave? [y/N] ";
         cin >> keyPress;
 
-        if(keyPress == 'y') {
+        if (keyPress == 'y') {
             system("clear");
         } else if (keyPress == 'N') {
-            cout << "Exiting the game." << endl;
+            cout << "Saindo do jogo." << endl;
             break;
         }
 
