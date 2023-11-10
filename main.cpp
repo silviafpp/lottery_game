@@ -42,10 +42,14 @@ int main() {
         cout << "\nDeseja gerar outra chave? [y/N] ";
         cin >> keyPress;
 
-        if(keyPress == 'y') {
+        if(keyPress == 'Y') {
+
             system("clear");
-        } else if (keyPress == 'N') {
+
+        } else if (keyPress == 'n') {
+
             cout << "Exiting the game." << endl;
+            
             break;
         }
 
